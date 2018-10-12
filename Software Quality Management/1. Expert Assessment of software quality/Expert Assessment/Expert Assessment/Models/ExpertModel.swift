@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExpertAppraisal {
+struct ExpertAppraisal: Codable {
     /// Точність управління та обчислень
     var accuracyOfControlAndComputing: Float = 0
     /// Ступінь стандартності інтерфейсів

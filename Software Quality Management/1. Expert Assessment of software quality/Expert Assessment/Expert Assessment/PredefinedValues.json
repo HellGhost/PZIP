@@ -1,0 +1,119 @@
+{
+    "startValues" : {
+        "industry" : {
+            "accuracyOfControlAndComputing" : 8.0,
+            "degreeOfStandardInterfaces" : 5.0,
+            "functionalCompleteness" : 10.0,
+            "errorsResilience" : 6.0,
+            "expandAbility" : 5.0,
+            "workConvenience" : 9.0,
+            "workSimplicity" : 9.0,
+            "standardsCompliance" : 6.0,
+            "softwarePortability" : 8.0,
+            "studyConvenience" : 7.0
+        },
+        "usability" : {
+            "accuracyOfControlAndComputing" : 5.0,
+            "degreeOfStandardInterfaces" : 9.0,
+            "functionalCompleteness" : 6.0,
+            "errorsResilience" : 5.0,
+            "expandAbility" : 5.0,
+            "workConvenience" : 9.0,
+            "workSimplicity" : 7.0,
+            "standardsCompliance" : 5.0,
+            "softwarePortability" : 6.0,
+            "studyConvenience" : 8.0
+        },
+        "software" : {
+            "accuracyOfControlAndComputing" : 9.0,
+            "degreeOfStandardInterfaces" : 6.0,
+            "functionalCompleteness" : 9.0,
+            "errorsResilience" : 10.0,
+            "expandAbility" : 10.0,
+            "workConvenience" : 7.0,
+            "workSimplicity" : 6.0,
+            "standardsCompliance" : 10.0,
+            "softwarePortability" : 9.0,
+            "studyConvenience" : 6.0
+        },
+        "enduser" : {
+            "accuracyOfControlAndComputing" : 7.0,
+            "degreeOfStandardInterfaces" : 5.0,
+            "functionalCompleteness" : 6.0,
+            "errorsResilience" : 7.0,
+            "expandAbility" : 4.0,
+            "workConvenience" : 10.0,
+            "workSimplicity" : 10.0,
+            "standardsCompliance" : 5.0,
+            "softwarePortability" : 6.0,
+            "studyConvenience" : 10.0
+        }
+    },
+    "expertsAppraisal" : {
+        "industry" : [{
+            "accuracyOfControlAndComputing" : 10.0,
+            "degreeOfStandardInterfaces" : 9.0,
+            "functionalCompleteness" : 9.0,
+            "errorsResilience" : 6.0,
+            "expandAbility" : 7.0,
+            "workConvenience" : 9.0,
+            "workSimplicity" : 10.0,
+            "standardsCompliance" : 6.0,
+            "softwarePortability" : 9.0,
+            "studyConvenience" : 6.0
+        }],
+        "usability" : [{
+            "accuracyOfControlAndComputing" : 9.0,
+            "degreeOfStandardInterfaces" : 8.0,
+            "functionalCompleteness" : 7.0,
+            "errorsResilience" : 5.0,
+            "expandAbility" : 5.0,
+            "workConvenience" : 7.0,
+            "workSimplicity" : 9.0,
+            "standardsCompliance" : 8.0,
+            "softwarePortability" : 7.0,
+            "studyConvenience" : 5.0
+        }],
+        "software" : [{
+            "accuracyOfControlAndComputing" : 10.0,
+            "degreeOfStandardInterfaces" : 8.0,
+            "functionalCompleteness" : 9.0,
+            "errorsResilience" : 8.0,
+            "expandAbility" : 8.0,
+            "workConvenience" : 8.0,
+            "workSimplicity" : 10.0,
+            "standardsCompliance" : 7.0,
+            "softwarePortability" : 6.0,
+            "studyConvenience" : 9.0
+        }],
+        "enduser" : {
+            [
+                {
+                    "accuracyOfControlAndComputing" : 6.0,
+                    "degreeOfStandardInterfaces" : 6.0,
+                    "functionalCompleteness" : 6.0,
+                    "errorsResilience" : 6.0,
+                    "expandAbility" : 4.0,
+                    "workConvenience" : 6.0,
+                    "workSimplicity" : 6.0,
+                    "standardsCompliance" : 6.0,
+                    "softwarePortability" : 8.0,
+                    "studyConvenience" : 3.0
+                },
+                {
+                    "accuracyOfControlAndComputing" : 8.0,
+                    "degreeOfStandardInterfaces" : 8.0,
+                    "functionalCompleteness" : 7.0,
+                    "errorsResilience" : 8.0,
+                    "expandAbility" : 5.0,
+                    "workConvenience" : 6.0,
+                    "workSimplicity" : 8.0,
+                    "standardsCompliance" : 4.0,
+                    "softwarePortability" : 8.0,
+                    "studyConvenience" : 4.0
+                }
+            ]
+        }
+    }
+}
+

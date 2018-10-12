@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12B6862821712914001ED25E /* PredefinedValues.json in Resources */ = {isa = PBXBuildFile; fileRef = 12B6862721712914001ED25E /* PredefinedValues.json */; };
+		12B6862A21712E98001ED25E /* PredefinedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6862921712E98001ED25E /* PredefinedValues.swift */; };
 		7127232A21709A0F006DDB34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127232921709A0F006DDB34 /* AppDelegate.swift */; };
 		7127232C21709A0F006DDB34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127232B21709A0F006DDB34 /* ViewController.swift */; };
 		7127232F21709A0F006DDB34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7127232D21709A0F006DDB34 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12B6862721712914001ED25E /* PredefinedValues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PredefinedValues.json; sourceTree = "<group>"; };
+		12B6862921712E98001ED25E /* PredefinedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedValues.swift; sourceTree = "<group>"; };
 		7127232621709A0F006DDB34 /* Expert Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expert Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7127232921709A0F006DDB34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7127232B21709A0F006DDB34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			children = (
 				7127232921709A0F006DDB34 /* AppDelegate.swift */,
 				7127232B21709A0F006DDB34 /* ViewController.swift */,
+				12B6862721712914001ED25E /* PredefinedValues.json */,
 				7127233D2170C2B2006DDB34 /* Models */,
 				7127232D21709A0F006DDB34 /* Main.storyboard */,
 				7127233021709A11006DDB34 /* Assets.xcassets */,
@@ -74,6 +79,7 @@
 			children = (
 				7127233B2170A32E006DDB34 /* ExpertModel.swift */,
 				7127233E2170C3A3006DDB34 /* ExpertGroupModel.swift */,
+				12B6862921712E98001ED25E /* PredefinedValues.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B6862821712914001ED25E /* PredefinedValues.json in Resources */,
 				7127233421709A11006DDB34 /* LaunchScreen.storyboard in Resources */,
 				7127233121709A11006DDB34 /* Assets.xcassets in Resources */,
 				7127232F21709A0F006DDB34 /* Main.storyboard in Resources */,
@@ -152,6 +159,7 @@
 				7127233C2170A32E006DDB34 /* ExpertModel.swift in Sources */,
 				7127232C21709A0F006DDB34 /* ViewController.swift in Sources */,
 				7127232A21709A0F006DDB34 /* AppDelegate.swift in Sources */,
+				12B6862A21712E98001ED25E /* PredefinedValues.swift in Sources */,
 				7127233F2170C3A3006DDB34 /* ExpertGroupModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

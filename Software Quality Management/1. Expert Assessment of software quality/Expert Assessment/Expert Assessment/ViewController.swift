@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let path = Bundle.main.path(forResource: "PredefinedValues", ofType: "json"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
+            let predefined = try? JSONDecoder().decode(PredefinedValues.self, from: data) else {
+            return
+        }
         
         let industryExpert = ExpertAppraisal(accuracyOfControlAndComputing: 8.0,
                                              degreeOfStandardInterfaces: 5.0,
@@ -24,6 +29,9 @@ class ViewController: UIViewController {
                                              softwarePortability: 8.0,
                                              studyConvenience: 7)
         
+//        let data = try? JSONEncoder().encode(industryExpert)
+      
+//        try? data?.write(to: URL(fileURLWithPath: "/Users/hell_ghost/PZIP/Software Quality Management/1. Expert Assessment of software quality/Expert Assessment/Expert Assessment/Predefined.json"))
         let usabilityExpert = ExpertAppraisal(accuracyOfControlAndComputing: 5.0,
                                               degreeOfStandardInterfaces: 9.0,
                                               functionalCompleteness: 6.0,
