@@ -17,11 +17,26 @@ class ViewController: UIViewController {
             let predefined = try? JSONDecoder().decode(PredefinedValues.self, from: data) else {
             return
         }
-        let initialCreterials = ExpertGroupTable(experts: [predefined.startValues.industry,
-                                                           predefined.startValues.usability,
-                                                           predefined.startValues.software,
-                                                           predefined.startValues.enduser],
-                                                 name: "Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання")
-        print(initialCreterials)
+        let initialCreterials = ExpertGroupTable(name: "Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання",
+                                                 industryExperts: predefined.startValues.industry,
+                                                 usabilityExperst: predefined.startValues.usability,
+                                                 softwareExperts:  predefined.startValues.software,
+                                                 enduserExperts: predefined.startValues.enduser)
+        
+        let industry = ExpertGroup(experts: predefined.expertsAppraisal!.industry,
+                                        name: "Експерт галузі").toExpertAppraisal()
+        let usability = ExpertGroup(experts: predefined.expertsAppraisal!.usability,
+                                        name: "Експерт юзабіліті").toExpertAppraisal()
+        let software = ExpertGroup(experts: predefined.expertsAppraisal!.software,
+                                        name: "Експерт з програмування").toExpertAppraisal()
+        let enduser = ExpertGroup(experts: predefined.expertsAppraisal!.enduser,
+                                        name: "Потенційні користувачі").toExpertAppraisal()
+        
+        let expertAppraisal = ExpertGroupTable(name: "Оцінки експертів",
+                                               industryExperts: industry,
+                                               usabilityExperst: usability,
+                                               softwareExperts: software,
+                                               enduserExperts: enduser)
+        
     }
 }

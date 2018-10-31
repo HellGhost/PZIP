@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct ExpertGroupTable {
-    var experts: [ExpertAppraisal] = []
-    var name: String = ""
+class ExpertGroup {
+    let experts: [ExpertAppraisal]
+    let name: String
     
+    init(experts: [ExpertAppraisal], name: String) {
+        self.experts = experts
+        self.name = name
+    }
     
     /// Сумарна Точність управління та обчислень
     var summAccuracyOfControlAndComputing: Float {
@@ -115,7 +119,6 @@ struct ExpertGroupTable {
         return summStudyConvenience / Float(experts.count)
     }
     
-    
     func toExpertAppraisal() -> ExpertAppraisal {
         return ExpertAppraisal(accuracyOfControlAndComputing: averageAccuracyOfControlAndComputing,
                                degreeOfStandardInterfaces: averageDegreeOfStandardInterfaces,
@@ -127,5 +130,28 @@ struct ExpertGroupTable {
                                standardsCompliance: averageStandardsCompliance,
                                softwarePortability: averageSoftwarePortability,
                                studyConvenience: averageStudyConvenience)
+    }
+}
+
+class ExpertGroupTable: ExpertGroup {
+    let industryExperts: ExpertAppraisal
+    let usabilityExperst: ExpertAppraisal
+    let softwareExperts: ExpertAppraisal
+    let enduserExperts: ExpertAppraisal
+    
+    init(name: String,
+         industryExperts: ExpertAppraisal,
+         usabilityExperst: ExpertAppraisal,
+         softwareExperts: ExpertAppraisal,
+         enduserExperts: ExpertAppraisal) {
+        self.industryExperts = industryExperts
+        self.usabilityExperst = usabilityExperst
+        self.softwareExperts = softwareExperts
+        self.enduserExperts = enduserExperts
+        super.init(experts: [industryExperts,
+                             usabilityExperst,
+                             softwareExperts,
+                             enduserExperts],
+                   name: name)
     }
 }
