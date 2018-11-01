@@ -13,16 +13,16 @@
             "studyConvenience" : 7.0
         },
         "usability" : {
-            "accuracyOfControlAndComputing" : 5.0,
-            "degreeOfStandardInterfaces" : 9.0,
-            "functionalCompleteness" : 6.0,
-            "errorsResilience" : 5.0,
-            "expandAbility" : 5.0,
-            "workConvenience" : 9.0,
-            "workSimplicity" : 7.0,
-            "standardsCompliance" : 5.0,
-            "softwarePortability" : 6.0,
-            "studyConvenience" : 8.0
+            "expandAbility" : 5,
+            "degreeOfStandardInterfaces" : 9,
+            "accuracyOfControlAndComputing" : 5,
+            "workSimplicity" : 7,
+            "standardsCompliance" : 5,
+            "studyConvenience" : 8,
+            "errorsResilience" : 5,
+            "functionalCompleteness" : 6,
+            "softwarePortability" : 6,
+            "workConvenience" : 9
         },
         "software" : {
             "accuracyOfControlAndComputing" : 9.0,
@@ -66,16 +66,16 @@
         ],
         "usability" : [
             {
-                "accuracyOfControlAndComputing" : 9.0,
-                "degreeOfStandardInterfaces" : 8.0,
-                "functionalCompleteness" : 7.0,
-                "errorsResilience" : 5.0,
-                "expandAbility" : 5.0,
-                "workConvenience" : 7.0,
-                "workSimplicity" : 9.0,
-                "standardsCompliance" : 8.0,
-                "softwarePortability" : 7.0,
-                "studyConvenience" : 5.0
+                "softwarePortability" : 7,
+                "degreeOfStandardInterfaces" : 8,
+                "standardsCompliance" : 8,
+                "studyConvenience" : 5,
+                "functionalCompleteness" : 7,
+                "expandAbility" : 5,
+                "workSimplicity" : 9,
+                "accuracyOfControlAndComputing" : 9,
+                "errorsResilience" : 5,
+                "workConvenience" : 7
             }
         ],
         "software" : [

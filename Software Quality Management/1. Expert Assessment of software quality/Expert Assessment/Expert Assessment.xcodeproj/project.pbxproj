@@ -14,10 +14,12 @@
 		7127232F21709A0F006DDB34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7127232D21709A0F006DDB34 /* Main.storyboard */; };
 		7127233121709A11006DDB34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7127233021709A11006DDB34 /* Assets.xcassets */; };
 		7127233421709A11006DDB34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7127233221709A11006DDB34 /* LaunchScreen.storyboard */; };
-		7127233C2170A32E006DDB34 /* ExpertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127233B2170A32E006DDB34 /* ExpertModel.swift */; };
+		7127233C2170A32E006DDB34 /* ExpertAppraisalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127233B2170A32E006DDB34 /* ExpertAppraisalModel.swift */; };
 		7127233F2170C3A3006DDB34 /* ExpertGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127233E2170C3A3006DDB34 /* ExpertGroupModel.swift */; };
 		71A087192189FC6900BED425 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A087182189FC6900BED425 /* Calculations.swift */; };
 		71A0871B2189FCEC00BED425 /* ExpertWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0871A2189FCEC00BED425 /* ExpertWeight.swift */; };
+		71A0871D218B3F6D00BED425 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0871C218B3F6D00BED425 /* Triangle.swift */; };
+		71A0871F218B4A7A00BED425 /* WebDiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0871E218B4A7A00BED425 /* WebDiagrammView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +32,12 @@
 		7127233021709A11006DDB34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7127233321709A11006DDB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7127233521709A11006DDB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7127233B2170A32E006DDB34 /* ExpertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertModel.swift; sourceTree = "<group>"; };
+		7127233B2170A32E006DDB34 /* ExpertAppraisalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertAppraisalModel.swift; sourceTree = "<group>"; };
 		7127233E2170C3A3006DDB34 /* ExpertGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertGroupModel.swift; sourceTree = "<group>"; };
 		71A087182189FC6900BED425 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		71A0871A2189FCEC00BED425 /* ExpertWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertWeight.swift; sourceTree = "<group>"; };
+		71A0871C218B3F6D00BED425 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		71A0871E218B4A7A00BED425 /* WebDiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDiagrammView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				7127232921709A0F006DDB34 /* AppDelegate.swift */,
 				7127232B21709A0F006DDB34 /* ViewController.swift */,
+				71A0871E218B4A7A00BED425 /* WebDiagrammView.swift */,
 				12B6862721712914001ED25E /* PredefinedValues.json */,
 				71A087182189FC6900BED425 /* Calculations.swift */,
 				7127233D2170C2B2006DDB34 /* Models */,
@@ -82,7 +87,8 @@
 		7127233D2170C2B2006DDB34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7127233B2170A32E006DDB34 /* ExpertModel.swift */,
+				7127233B2170A32E006DDB34 /* ExpertAppraisalModel.swift */,
+				71A0871C218B3F6D00BED425 /* Triangle.swift */,
 				71A0871A2189FCEC00BED425 /* ExpertWeight.swift */,
 				7127233E2170C3A3006DDB34 /* ExpertGroupModel.swift */,
 				12B6862921712E98001ED25E /* PredefinedValues.swift */,
@@ -162,13 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7127233C2170A32E006DDB34 /* ExpertModel.swift in Sources */,
+				7127233C2170A32E006DDB34 /* ExpertAppraisalModel.swift in Sources */,
 				71A087192189FC6900BED425 /* Calculations.swift in Sources */,
 				7127232C21709A0F006DDB34 /* ViewController.swift in Sources */,
 				7127232A21709A0F006DDB34 /* AppDelegate.swift in Sources */,
 				12B6862A21712E98001ED25E /* PredefinedValues.swift in Sources */,
 				71A0871B2189FCEC00BED425 /* ExpertWeight.swift in Sources */,
 				7127233F2170C3A3006DDB34 /* ExpertGroupModel.swift in Sources */,
+				71A0871F218B4A7A00BED425 /* WebDiagrammView.swift in Sources */,
+				71A0871D218B3F6D00BED425 /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

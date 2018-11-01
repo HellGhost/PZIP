@@ -10,7 +10,7 @@ import Foundation
 
 class ExpertGroup {
     let experts: [ExpertAppraisal]
-    let name: String
+    var name: String
     
     init(experts: [ExpertAppraisal], name: String) {
         self.experts = experts
@@ -135,7 +135,7 @@ class ExpertGroup {
 
 class ExpertGroupTable: ExpertGroup {
     let industryExperts: ExpertAppraisal
-    let usabilityExperst: ExpertAppraisal
+    let usabilityExperts: ExpertAppraisal
     let softwareExperts: ExpertAppraisal
     let enduserExperts: ExpertAppraisal
     
@@ -145,7 +145,7 @@ class ExpertGroupTable: ExpertGroup {
          softwareExperts: ExpertAppraisal,
          enduserExperts: ExpertAppraisal) {
         self.industryExperts = industryExperts
-        self.usabilityExperst = usabilityExperst
+        self.usabilityExperts = usabilityExperst
         self.softwareExperts = softwareExperts
         self.enduserExperts = enduserExperts
         super.init(experts: [industryExperts,
@@ -153,5 +153,24 @@ class ExpertGroupTable: ExpertGroup {
                              softwareExperts,
                              enduserExperts],
                    name: name)
+    }
+    
+    func averageApprisal(weight: ExpertWeight) -> ExpertAppraisal {
+        
+        let avgSumm = industryExperts * weight.industry +
+                      usabilityExperts * weight.usability +
+                      softwareExperts * weight.software +
+                      enduserExperts * weight.enduser
+
+        return avgSumm / weight.summ
+    }
+    
+    static func *(lhs: ExpertGroupTable, rhs: ExpertGroupTable) -> ExpertGroupTable {
+        
+        return ExpertGroupTable(name: "",
+                                industryExperts: lhs.industryExperts * rhs.industryExperts,
+                                usabilityExperst: lhs.usabilityExperts * rhs.usabilityExperts,
+                                softwareExperts: lhs.softwareExperts * rhs.softwareExperts,
+                                enduserExperts: lhs.enduserExperts * rhs.enduserExperts)
     }
 }

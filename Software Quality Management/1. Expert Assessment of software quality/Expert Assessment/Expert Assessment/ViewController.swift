@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var contentView: UIView?
+    var avgView: UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let path = Bundle.main.path(forResource: "PredefinedValues", ofType: "json"),
@@ -17,7 +19,7 @@ class ViewController: UIViewController {
             let predefined = try? JSONDecoder().decode(PredefinedValues.self, from: data) else {
             return
         }
-        let initialCreterials = ExpertGroupTable(name: "Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання",
+        let initialCreterials = ExpertGroupTable(name: "Табл. 1. Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання",
                                                  industryExperts: predefined.startValues.industry,
                                                  usabilityExperst: predefined.startValues.usability,
                                                  softwareExperts:  predefined.startValues.software,
@@ -38,5 +40,86 @@ class ViewController: UIViewController {
                                                softwareExperts: software,
                                                enduserExperts: enduser)
         
+        let weight = ExpertWeight(industry: 0.7,
+                                  usability: 0.8,
+                                  software: 0.9,
+                                  enduser: 0.5)
+        
+        let averageApprisal = initialCreterials * expertAppraisal
+        averageApprisal.name = "Табл. 3. Оцінки експертів за кожним критерієм оцінювання та їхні усереднені значення"
+        
+        let avgValues = averageApprisal.averageApprisal(weight: weight)
+        
+        var output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.industryExperts,
+                                                             avg: averageApprisal.industryExperts,
+                                                             weight: weight.industry)
+        
+        let industryWebDiagramm = WebDiagrammView(triangles: output.triangles,
+                                          square: output.square,
+                                          name: "Галузі")
+        
+        industryWebDiagramm.backgroundColor = .clear
+        industryWebDiagramm.center = CGPoint(x: 160, y: 160)
+        contentView?.addSubview(industryWebDiagramm)
+        
+        output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.usabilityExperts,
+                                                      avg: averageApprisal.usabilityExperts,
+                                                      weight: weight.usability)
+        
+        let usabilityWebDiagramm = WebDiagrammView(triangles: output.triangles,
+                                                  square: output.square,
+                                                  name: "Юзабіліті")
+        
+        usabilityWebDiagramm.backgroundColor = .clear
+        usabilityWebDiagramm.polygonColor = UIColor.green
+        usabilityWebDiagramm.center = CGPoint(x: 160+360, y: 160)
+        contentView?.addSubview(usabilityWebDiagramm)
+        
+        output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.softwareExperts,
+                                                      avg: averageApprisal.softwareExperts,
+                                                      weight: weight.software)
+        
+        let softwareWebDiagramm = WebDiagrammView(triangles: output.triangles,
+                                                   square: output.square,
+                                                   name: "Програмування")
+        
+        softwareWebDiagramm.backgroundColor = .clear
+        softwareWebDiagramm.polygonColor = UIColor.blue
+        softwareWebDiagramm.center = CGPoint(x: 160, y: 160+360)
+        contentView?.addSubview(softwareWebDiagramm)
+        
+        output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.enduserExperts,
+                                                      avg: averageApprisal.enduserExperts,
+                                                      weight: weight.enduser)
+        
+        let enduserWebDiagramm = WebDiagrammView(triangles: output.triangles,
+                                                  square: output.square,
+                                                  name: "Користувачі")
+        
+        enduserWebDiagramm.backgroundColor = .clear
+        enduserWebDiagramm.polygonColor = UIColor.yellow
+        enduserWebDiagramm.center = CGPoint(x: 160+360, y: 160+360)
+        contentView?.addSubview(enduserWebDiagramm)
+        
+    
+        output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.toExpertAppraisal(),
+                                                      avg: avgValues,
+                                                      weight: 1.0)
+        
+        let avgWebDiagramm = WebDiagrammView(triangles: output.triangles,
+                                                 square: output.square,
+                                                 name: "Усереднені")
+        
+        avgWebDiagramm.backgroundColor = .clear
+        avgWebDiagramm.polygonColor = UIColor.purple
+        avgWebDiagramm.center = self.view.center
+        view.addSubview(avgWebDiagramm)
+        avgView = avgWebDiagramm
+        avgView?.isHidden = true
+    }
+    
+    @IBAction func switchPressed(_ sender: UISwitch) {
+        avgView?.isHidden = sender.isOn
+        contentView?.isHidden = !sender.isOn
     }
 }
