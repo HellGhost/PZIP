@@ -23,7 +23,7 @@ class WebDiagrammView: UIView {
         self.triangles = triangles
         self.name = name
         self.square = square
-        super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))
+        super.init(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +51,9 @@ class WebDiagrammView: UIView {
         }
         UIColor.gray.setStroke()
         UIColor.gray.setFill()
+        
         let path = UIBezierPath()
+        path.lineWidth = 2
         triangles.enumerated().forEach { (offset, element) in
             let point = CGPoint(x: mid.x + CGFloat(element.a) * coof, y: mid.y + CGFloat(element.b) * coof)
             if offset == 0 {

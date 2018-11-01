@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                                           name: "Галузі")
         
         industryWebDiagramm.backgroundColor = .clear
-        industryWebDiagramm.center = CGPoint(x: 160, y: 160)
+        industryWebDiagramm.center = CGPoint(x: 200, y: 200)
         contentView?.addSubview(industryWebDiagramm)
         
         output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.usabilityExperts,
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         
         usabilityWebDiagramm.backgroundColor = .clear
         usabilityWebDiagramm.polygonColor = UIColor.green
-        usabilityWebDiagramm.center = CGPoint(x: 160+360, y: 160)
+        usabilityWebDiagramm.center = CGPoint(x: 600, y: 200)
         contentView?.addSubview(usabilityWebDiagramm)
         
         output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.softwareExperts,
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         
         softwareWebDiagramm.backgroundColor = .clear
         softwareWebDiagramm.polygonColor = UIColor.blue
-        softwareWebDiagramm.center = CGPoint(x: 160, y: 160+360)
+        softwareWebDiagramm.center = CGPoint(x: 1000, y: 200)
         contentView?.addSubview(softwareWebDiagramm)
         
         output = DiagrammCalculator.calculateDiagramm(base: initialCreterials.enduserExperts,
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         
         enduserWebDiagramm.backgroundColor = .clear
         enduserWebDiagramm.polygonColor = UIColor.yellow
-        enduserWebDiagramm.center = CGPoint(x: 160+360, y: 160+360)
+        enduserWebDiagramm.center = CGPoint(x: 1400, y: 200)
         contentView?.addSubview(enduserWebDiagramm)
         
     
@@ -112,14 +112,10 @@ class ViewController: UIViewController {
         
         avgWebDiagramm.backgroundColor = .clear
         avgWebDiagramm.polygonColor = UIColor.purple
-        avgWebDiagramm.center = self.view.center
-        view.addSubview(avgWebDiagramm)
-        avgView = avgWebDiagramm
-        avgView?.isHidden = true
-    }
-    
-    @IBAction func switchPressed(_ sender: UISwitch) {
-        avgView?.isHidden = sender.isOn
-        contentView?.isHidden = !sender.isOn
+        avgWebDiagramm.center = CGPoint(x: 1800, y: 200)
+        contentView?.addSubview(avgWebDiagramm)
+        
+        
+        (contentView?.superview as? UIScrollView)?.isPagingEnabled = true
     }
 }
