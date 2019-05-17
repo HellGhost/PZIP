@@ -136,3 +136,18 @@ extension ExpertAppraisal {
                                studyConvenience: lhs.studyConvenience / rhs)
     }
 }
+
+extension ExpertAppraisal {
+    init(random max: Int) {
+        self.accuracyOfControlAndComputing = Float(Int.random(in: 2...max))
+        self.degreeOfStandardInterfaces = Float(Int.random(in: 2...max))
+        self.functionalCompleteness = Float(Int.random(in: 2...max))
+        self.errorsResilience = Float(Int.random(in: 2...max))
+        self.expandAbility = Float(Int.random(in: 2...max))
+        self.workConvenience = Float(Int.random(in: 2...max))
+        self.workSimplicity = Float(Int.random(in: 2...max))
+        self.standardsCompliance = Float(Int.random(in: 2...max))
+        self.softwarePortability = Float(Int.random(in: 2...max))
+        self.studyConvenience = Float(Int.random(in: 2...max))
+    }
+}

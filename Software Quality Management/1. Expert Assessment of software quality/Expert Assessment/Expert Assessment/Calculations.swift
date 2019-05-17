@@ -21,7 +21,7 @@ class DiagrammCalculator {
         let radians = additions.map { value -> Float in
             let result = (value + previousValue) / 2
             previousValue = value
-            return Float((Double(result) * M_PI) / 180.0)
+            return result * Float.pi / 180.0
         }
         let avgWeight = avg.allValues.map {
             $0 * weight

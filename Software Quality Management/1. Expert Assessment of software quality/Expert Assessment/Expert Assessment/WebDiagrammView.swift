@@ -37,7 +37,7 @@ class WebDiagrammView: UIView {
             NSAttributedString.Key.foregroundColor: UIColor.black,
             ]
         let mid = CGPoint(x: rect.midX, y:  rect.midY + 10)
-        ("\(name) S=\(square) ум.од" as! NSString).draw(in: CGRect(x: 20, y: 0, width: rect.size.width-20, height: 20), withAttributes: textFontAttributes)
+        ("\(name) S=\(square) ум.од" as NSString).draw(in: CGRect(x: 20, y: 0, width: rect.size.width-20, height: 20), withAttributes: textFontAttributes)
         UIColor.lightGray.setStroke()
         for i in 0...10 {
             let fi = CGFloat(i)
@@ -68,7 +68,12 @@ class WebDiagrammView: UIView {
                                                    height: 4))
             oval.fill()
             oval.stroke()
-            ("\(offset+1)" as! NSString).draw(at: point, withAttributes: textFontAttributes)
+            ("\(offset+1)" as NSString).draw(at: point, withAttributes: textFontAttributes)
+            
+            let linePath = UIBezierPath()
+            linePath.move(to: mid)
+            linePath.addLine(to: point)
+            linePath.stroke()
         }
         polygonColor.setStroke()
         polygonColor.withAlphaComponent(0.5).setFill()

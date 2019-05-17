@@ -20,19 +20,28 @@ class ViewController: UIViewController {
             return
         }
         let initialCreterials = ExpertGroupTable(name: "Табл. 1. Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання",
-                                                 industryExperts: predefined.startValues.industry,
-                                                 usabilityExperst: predefined.startValues.usability,
-                                                 softwareExperts:  predefined.startValues.software,
-                                                 enduserExperts: predefined.startValues.enduser)
+                                                 industryExperts: ExpertAppraisal.init(random: 10),
+                                                 usabilityExperst: ExpertAppraisal.init(random: 10),
+                                                 softwareExperts:  ExpertAppraisal.init(random: 10),
+                                                 enduserExperts: ExpertAppraisal.init(random: 10))
         
-        let industry = ExpertGroup(experts: predefined.expertsAppraisal!.industry,
-                                        name: "Експерт галузі").toExpertAppraisal()
-        let usability = ExpertGroup(experts: predefined.expertsAppraisal!.usability,
-                                        name: "Експерт юзабіліті").toExpertAppraisal()
-        let software = ExpertGroup(experts: predefined.expertsAppraisal!.software,
-                                        name: "Експерт з програмування").toExpertAppraisal()
-        let enduser = ExpertGroup(experts: predefined.expertsAppraisal!.enduser,
-                                        name: "Потенційні користувачі").toExpertAppraisal()
+//        let industry = ExpertGroup(experts: predefined.expertsAppraisal!.industry,
+//                                        name: "Експерт галузі").toExpertAppraisal()
+//        let usability = ExpertGroup(experts: predefined.expertsAppraisal!.usability,
+//                                        name: "Експерт юзабіліті").toExpertAppraisal()
+//        let software = ExpertGroup(experts: predefined.expertsAppraisal!.software,
+//                                        name: "Експерт з програмування").toExpertAppraisal()
+//        let enduser = ExpertGroup(experts: predefined.expertsAppraisal!.enduser,
+//                                        name: "Потенційні користувачі").toExpertAppraisal()
+        
+        let industry = ExpertGroup(random: Int.random(in: 20...100),
+                                   name: "Експерт галузі").toExpertAppraisal()
+        let usability =  ExpertGroup(random: Int.random(in: 20...100),
+                                     name: "Експерт юзабіліті").toExpertAppraisal()
+        let software =  ExpertGroup(random: Int.random(in: 20...100),
+                                    name: "Експерт з програмування").toExpertAppraisal()
+        let enduser =  ExpertGroup(random: Int.random(in: 20...100),
+                                   name: "Потенційні користувачі").toExpertAppraisal()
         
         let expertAppraisal = ExpertGroupTable(name: "Оцінки експертів",
                                                industryExperts: industry,
@@ -114,7 +123,6 @@ class ViewController: UIViewController {
         avgWebDiagramm.polygonColor = UIColor.purple
         avgWebDiagramm.center = CGPoint(x: 1800, y: 200)
         contentView?.addSubview(avgWebDiagramm)
-        
         
         (contentView?.superview as? UIScrollView)?.isPagingEnabled = true
     }

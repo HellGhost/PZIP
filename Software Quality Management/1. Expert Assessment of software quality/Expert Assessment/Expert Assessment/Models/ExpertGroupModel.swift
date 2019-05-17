@@ -17,6 +17,14 @@ class ExpertGroup {
         self.name = name
     }
     
+    convenience init(random count: Int, name: String) {
+        var exp = [ExpertAppraisal]()
+        for _ in 0...count {
+            exp.append(ExpertAppraisal.init(random: 10))
+        }
+        self.init(experts: exp, name: name)
+    }
+    
     /// Сумарна Точність управління та обчислень
     var summAccuracyOfControlAndComputing: Float {
         return experts.reduce(0.0, { (current, expert) -> Float in
